@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "rootDir": "./backend/src",      // Carpeta de entrada de tus archivos .ts
+    "outDir": "./backend/dist",      // Carpeta de salida para los .js compilados
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["backend/src"],        // Incluye solo los archivos del backend
+  "exclude": ["node_modules", "backend/dist"]
+}
