@@ -9,6 +9,6 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "include": ["backend/src"],        // Incluye solo los archivos del backend
+  "include": ["backend/src", "backend/src/types"],        // Incluye solo los archivos del backend
   "exclude": ["node_modules", "backend/dist"]
 }
