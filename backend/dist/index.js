@@ -9,16 +9,21 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const db_1 = require("./config/db");
 const registerAuth_1 = __importDefault(require("./routes/auth/registerAuth"));
 const loginAuth_1 = __importDefault(require("./routes/auth/loginAuth"));
+const meAuth_1 = __importDefault(require("./routes/auth/meAuth"));
 dotenv_1.default.config();
 const PORT = (_a = process.env.PORT) !== null && _a !== void 0 ? _a : 3000;
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use('/api/auth', registerAuth_1.default);
-app.use('/api/auth/', loginAuth_1.default);
+app.use('/api/auth', loginAuth_1.default);
+app.use('/api/auth', meAuth_1.default);
 app.get('/', (req, res) => {
-    res.send("Hola Mundo");
+    res.send("Holaaaaa");
 });
-(0, db_1.connectDB)();
-app.listen(PORT, () => {
-    console.log(`Server running at PORT ${PORT}`);
+(0, db_1.connectDB)().then(() => {
+    app.listen(PORT, () => {
+        console.log(`Server running at PORT ${PORT}`);
+    });
+}).catch((err) => {
+    console.error("Error al conectar a la base de datos:", err);
 });

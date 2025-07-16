@@ -15,3 +15,4 @@ const router = (0, express_1.Router)();
 router.get("/me", auth_1.protect, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.status(200).json(req.user);
 }));
+exports.default = router;
